@@ -51,6 +51,7 @@
 
 		if (isNightMode) {
 			toggleNightMode(isNightMode);
+     
 		}
 
 		minesweeper = new Minesweeper([
@@ -60,36 +61,8 @@
 			[ 1, 10, 45]
 		], getOptions, setOptions);
 
-		minesweeper.onWin = function(gameTypeId, time) {
-			var mode;
-			switch (gameTypeId) {
-				case 1: mode = 'Beginner'; break;
-				case 2: mode = 'Intermediate'; break;
-				case 3: mode = 'Expert'; break;
-				default: return;
-			}
+	
 
-			var tweet = 'I just beat #MinesweeperOnline in ' + time + ' second' + (time === 1 ? '' : 's') + ' on ' + mode + ' mode!';
-			$('#share-twitter').attr('href', 'https://twitter.com/intent/tweet?text=' + encodeURIComponent(tweet)
-				+ '&url=' + encodeURIComponent('http://minesweeperonline.com') + '&hashtags=MinesweeperOnline');
-
-			var fbSummary = tweet.replace('#MinesweeperOnline', 'Minesweeper Online');
-			$('#share-facebook').attr('href', 'https://www.facebook.com/sharer/sharer.php'
-				+ '?u=' + encodeURIComponent('http://minesweeperonline.com')
-				+ '&quote=' + encodeURIComponent(fbSummary)
-				+ '&hashtag=' + encodeURIComponent('#MinesweeperOnline'));
-
-			$('#share-text').text(tweet + ' http://minesweeperonline.com');
-			$('#share').fadeIn();
-		};
-
-		minesweeper.onNewHighScore = function(intervalTypeId) {
-			$('#scores-panes').load('scores-panes.php?interval=' + intervalTypeId + '&r=' + Math.random());
-			if (intervalTypeId === 1) $('#daily-link').click();
-			if (intervalTypeId === 2) $('#weekly-link').click();
-			if (intervalTypeId === 3) $('#monthly-link').click();
-			if (intervalTypeId === 4) $('#alltime-link').click();
-		};
 
 		minesweeper.newGame();
 		setHash();
@@ -101,14 +74,14 @@
 			$("#import").hide();
 			$("#export").hide();
 		});
-
+/*
 		$("#options-form").submit(function(e) {
 			$("#options").hide();
 			minesweeper.newGame();
 			setHash();
 			e.preventDefault();
 		});
-
+*/
 		$("#display-link, #display-close").click(function() {
 			$("#options").hide();
 			$("#display").toggle();
@@ -200,32 +173,7 @@
 			}
 		});
 
-		$(".scores-tab").click(function() {
-			var id = this.id;
-			$(".scores-tab-selected").removeClass("scores-tab-selected");
-			$(this).addClass("scores-tab-selected");
-			$(".scores-pane").hide();
-			$("#" + id.substring(0, id.length - 5)).show();
-		});
-
-		$('#share-close').click(function() {
-			$('#share').fadeOut();
-		});
-
-		$('#share-twitter, #share-facebook').click(function(e) {
-			//https://dev.twitter.com/docs/intents
-			var width = 550;
-			var height = 420;
-			var winWidth = screen.width;
-			var winHeight = screen.height;
-			var left = Math.round((winWidth / 2) - (width / 2));
-			var top = 0;
-			if (winHeight > height) {
-				top = Math.round((winHeight / 2) - (height / 2));
-			}
-			window.open($(this).attr('href'), 'share', 'scrollbars=yes,resizable=yes,toolbar=no,location=yes,width=' + width + ',height=' + height + ',left=' + left + ',top=' + top);
-			e.preventDefault();
-		});
+		
 
 		function setPosition(position) {
 			if (position == 'left') {
@@ -237,11 +185,11 @@
 				$('body').css('margin-left', '0px');
 			}
 		}
-
+/*
 		function toggleNightMode(isOn) {
 			$('body').toggleClass('night-mode', isOn);
 		}
-
+*/
 		function getOptions() {
 			var gameTypeId;
 			var numRows;
@@ -356,36 +304,20 @@
 	});
 	</script>
 
-	<script>
-	  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-	  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-	  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-	  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
-	  ga('create', 'UA-51745-5', 'minesweeperonline.com');
-	  ga('send', 'pageview');
-
-	</script>
+	
 </head>
 
 <body>
-	<h1 class="ess-ee-oh">Minesweeper Online</h1>
-	<h2 class="ess-ee-oh">Play Free Online Minesweeper in JavaScript</h2>
+	<h1 class="ess-ee-oh">Minesweeper</h1>
+	<h2 class="ess-ee-oh">Play Minesweeper in JavaScript</h2>
 	<h3 class="ess-ee-oh">Play the classic game in Beginner, Intermediate, and Expert modes. It's the perfect way to play on a Mac!</h3>
 	<p class="ess-ee-oh">How to play: Click in the minefield to expose a free space. Numbers show how many mines are adjacent to that square. Right-click to flag a square as a mine. Win by exposing all the non-mine squares.</p>
 
 	<table border="0" cellpadding="0" cellspacing="0" width="100%" height="100%"><tr><td class="outer-container"><div class="inner-container" style="margin-left: auto; margin-right: auto;">
 
 	<div class="left-column">
-		<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-		<!-- minesweeper wide skyscraper (left) -->
-		<ins class="adsbygoogle"
-		     style="display:inline-block;width:160px;height:600px"
-		     data-ad-client="ca-pub-4459733198347558"
-		     data-ad-slot="1367153128"></ins>
-		<script>
-		(adsbygoogle = window.adsbygoogle || []).push({});
-		</script>
+		
+		
 	</div>
 
 	<div id="center-column">
