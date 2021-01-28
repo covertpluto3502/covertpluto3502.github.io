@@ -1,0 +1,214 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+    <head>
+        <meta charset="UTF-8"/>
+        <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE10"/>
+        <link href='https://fonts.googleapis.com/css?family=Montserrat:700,400' rel='stylesheet' type='text/css'/>
+        <title>Mouse Rate Checker</title>
+        <style>
+            html, body {
+                margin: 0;
+                padding: 0;
+                font-family: Montserrat, Arial, sans-serif;
+                background-color: black;
+            }
+
+            canvas {
+                display: block;
+                margin: 0 auto;
+                border: none;
+                width: 100%;
+                height: 100%;
+            }
+
+            div {
+                width: 100%;
+                height: 100%;
+                margin: 0 auto;
+            }
+
+            h1 {
+                color: white;
+                font-size: 60px;
+                font-family: Montserrat, Arial, sans-serif;
+                text-align: center;
+            }
+
+            p {
+                font-size: 40px;
+                text-align: center;
+                position: absolute;
+            }
+        </style>
+    </head>
+    <body>
+        <script>
+            var _0xfd94 = ["\x41\x6E\x64\x72\x6F\x69\x64\x7C\x77\x65\x62\x4F\x53\x7C\x69\x50\x68\x6F\x6E\x65\x7C\x69\x50\x61\x64\x7C", "\x42\x6C\x61\x63\x6B\x42\x65\x72\x72\x79\x7C\x57\x69\x6E\x64\x6F\x77\x73\x20\x50\x68\x6F\x6E\x65\x7C", "\x4F\x70\x65\x72\x61\x20\x4D\x69\x6E\x69\x7C\x49\x45\x4D\x6F\x62\x69\x6C\x65\x7C\x4D\x6F\x62\x69\x6C\x65", "\x69", "\x75\x73\x65\x72\x41\x67\x65\x6E\x74", "\x74\x65\x73\x74", "\x64\x6F\x63\x75\x6D\x65\x6E\x74\x4D\x6F\x64\x65", "\x62\x6F\x64\x79", "\x71\x75\x65\x72\x79\x53\x65\x6C\x65\x63\x74\x6F\x72", "\x44\x49\x56", "\x63\x72\x65\x61\x74\x65\x45\x6C\x65\x6D\x65\x6E\x74", "\x54\x45\x58\x54\x41\x52\x45\x41", "\x50", "\x61\x70\x70\x65\x6E\x64\x43\x68\x69\x6C\x64", "\x63\x6F\x6C\x73", "\x31\x30", "\x72\x6F\x77\x73", "\x32\x30", "\x72\x65\x61\x64\x4F\x6E\x6C\x79", "\x66\x6F\x6E\x74\x53\x69\x7A\x65", "\x73\x74\x79\x6C\x65", "\x31\x34\x70\x78", "\x70\x6F\x73\x69\x74\x69\x6F\x6E", "\x61\x62\x73\x6F\x6C\x75\x74\x65", "\x74\x6F\x70", "\x31\x30\x70\x78", "\x72\x69\x67\x68\x74", "\x32\x30\x70\x78", "\x63\x6F\x6C\x6F\x72", "\x77\x68\x69\x74\x65", "\x62\x61\x63\x6B\x67\x72\x6F\x75\x6E\x64\x43\x6F\x6C\x6F\x72", "\x62\x6C\x61\x63\x6B", "\x31\x39\x30\x70\x78", "\x6C\x65\x66\x74", "\x33\x35\x25", "\x77\x69\x64\x74\x68", "\x34\x30\x30\x70\x78", "\x23\x43\x43\x30\x30\x34\x30", "\x20\x48\x7A\x0A", "\x63\x72\x65\x61\x74\x65\x54\x65\x78\x74\x4E\x6F\x64\x65", "\x73\x63\x72\x6F\x6C\x6C\x54\x6F\x70", "\x73\x63\x72\x6F\x6C\x6C\x48\x65\x69\x67\x68\x74", "\x66\x69\x6C\x6C\x53\x74\x79\x6C\x65", "\x66\x69\x6C\x6C\x52\x65\x63\x74", "\x41\x76\x65\x72\x61\x67\x65\x3A\x20", "\x63\x65\x69\x6C", "\x20\x48\x7A", "\x74\x65\x78\x74\x41\x6C\x69\x67\x6E", "\x66\x6F\x6E\x74", "\x34\x30\x70\x78\x20\x4D\x6F\x6E\x74\x73\x65\x72\x72\x61\x74\x2C\x20\x41\x72\x69\x61\x6C\x2C\x20\x73\x61\x6E\x73\x2D\x73\x65\x72\x69\x66", "\x66\x69\x6C\x6C\x54\x65\x78\x74", "\x6D\x65\x61\x73\x75\x72\x65\x54\x65\x78\x74", "\x36\x30\x70\x78\x20\x4D\x6F\x6E\x74\x73\x65\x72\x72\x61\x74\x2C\x20\x41\x72\x69\x61\x6C\x2C\x20\x73\x61\x6E\x73\x2D\x73\x65\x72\x69\x66", "\x48\x7A", "\x50\x49", "\x63\x6C\x69\x65\x6E\x74\x57\x69\x64\x74\x68", "\x63\x6C\x69\x65\x6E\x74\x48\x65\x69\x67\x68\x74", "\x63\x65\x6E\x74\x65\x72", "\x4D\x6F\x75\x73\x65\x20\x52\x61\x74\x65\x20\x43\x68\x65\x63\x6B\x65\x72", "\x50\x6C\x65\x61\x73\x65\x20\x63\x6C\x69\x63\x6B\x20\x61\x6E\x64\x20\x6D\x6F\x76\x65\x20\x79\x6F\x75\x72\x20\x6D\x6F\x75\x73\x65\x20\x74\x6F\x20\x73\x74\x61\x72\x74\x2E", "\x70\x6F\x69\x6E\x74\x65\x72\x4C\x6F\x63\x6B\x45\x6C\x65\x6D\x65\x6E\x74", "\x6D\x6F\x7A\x50\x6F\x69\x6E\x74\x65\x72\x4C\x6F\x63\x6B\x45\x6C\x65\x6D\x65\x6E\x74", "\x6D\x6F\x75\x73\x65\x6D\x6F\x76\x65", "\x61\x64\x64\x45\x76\x65\x6E\x74\x4C\x69\x73\x74\x65\x6E\x65\x72", "\x72\x65\x6D\x6F\x76\x65\x45\x76\x65\x6E\x74\x4C\x69\x73\x74\x65\x6E\x65\x72", "\x6D\x6F\x76\x65\x6D\x65\x6E\x74\x58", "\x6D\x6F\x7A\x4D\x6F\x76\x65\x6D\x65\x6E\x74\x58", "\x6D\x6F\x76\x65\x6D\x65\x6E\x74\x59", "\x6D\x6F\x7A\x4D\x6F\x76\x65\x6D\x65\x6E\x74\x59", "\x67\x65\x74\x43\x6F\x61\x6C\x65\x73\x63\x65\x64\x45\x76\x65\x6E\x74\x73", "\x69\x6E\x6E\x65\x72\x57\x69\x64\x74\x68", "\x64\x6F\x63\x75\x6D\x65\x6E\x74\x45\x6C\x65\x6D\x65\x6E\x74", "\x69\x6E\x6E\x65\x72\x48\x65\x69\x67\x68\x74", "\x44\x4F\x45\x53\x20\x4E\x4F\x54\x20\x53\x55\x50\x50\x4F\x52\x54\x20\x4D\x4F\x42\x49\x4C\x45\x20\x44\x45\x56\x49\x43\x45\x53", "\x6C\x6F\x67", "\x48\x31", "\x69\x6E\x6E\x65\x72\x48\x54\x4D\x4C", "\x43\x61\x6E\x27\x74\x20\x62\x65\x20\x75\x73\x65\x64\x20\x6F\x6E\x20\x6D\x6F\x62\x69\x6C\x65\x20\x64\x65\x76\x69\x63\x65\x73", "\x77\x69\x64\x74\x68\x3A", "\x70\x78", "\x73\x65\x74\x41\x74\x74\x72\x69\x62\x75\x74\x65", "\x68\x65\x69\x67\x68\x74\x3A", "\x44\x6F\x65\x73\x20\x6E\x6F\x74\x20\x73\x75\x70\x70\x6F\x72\x74\x20\x49\x45\x20\x6F\x72\x20\x53\x61\x66\x61\x72\x69\x2E", "\x6C\x6F\x61\x64", "\x43\x41\x4E\x56\x41\x53", "\x32\x64", "\x67\x65\x74\x43\x6F\x6E\x74\x65\x78\x74", "\x68\x65\x69\x67\x68\x74", "\x6F\x6E\x63\x6C\x69\x63\x6B", "\x70\x6F\x69\x6E\x74\x65\x72\x6D\x6F\x76\x65"];
+            var fps = 4;
+            var count = 0;
+            var tick = 0;
+            var total = 0;
+            var tmr = null;
+            var testExp = new RegExp(_0xfd94[0] + _0xfd94[1] + _0xfd94[2],_0xfd94[3]);
+            var isDesktop = !(testExp[_0xfd94[5]](navigator[_0xfd94[4]]));
+            var isSafari = /^((?!chrome|android).)*safari/i[_0xfd94[5]](navigator[_0xfd94[4]]);
+            var isIE = false || !!document[_0xfd94[6]];
+            var body = document[_0xfd94[8]](_0xfd94[7]);
+            var divCanvas = document[_0xfd94[10]](_0xfd94[9]);
+            var current = document[_0xfd94[10]](_0xfd94[11]);
+            var average = document[_0xfd94[10]](_0xfd94[12]);
+            var canvas;
+            var ctx;
+            body[_0xfd94[13]](divCanvas);
+            body[_0xfd94[13]](average);
+            current[_0xfd94[14]] = _0xfd94[15];
+            current[_0xfd94[16]] = _0xfd94[17];
+            current[_0xfd94[18]] = true;
+            current[_0xfd94[20]][_0xfd94[19]] = _0xfd94[21];
+            current[_0xfd94[20]][_0xfd94[22]] = _0xfd94[23];
+            current[_0xfd94[20]][_0xfd94[24]] = _0xfd94[25];
+            current[_0xfd94[20]][_0xfd94[26]] = _0xfd94[27];
+            current[_0xfd94[20]][_0xfd94[28]] = _0xfd94[29];
+            current[_0xfd94[20]][_0xfd94[30]] = _0xfd94[31];
+            average[_0xfd94[20]][_0xfd94[22]] = _0xfd94[23];
+            average[_0xfd94[20]][_0xfd94[24]] = _0xfd94[32];
+            average[_0xfd94[20]][_0xfd94[33]] = _0xfd94[34];
+            average[_0xfd94[20]][_0xfd94[35]] = _0xfd94[36];
+            average[_0xfd94[20]][_0xfd94[28]] = _0xfd94[37];
+            average[_0xfd94[20]][_0xfd94[30]] = _0xfd94[31];
+            function updateCount() {
+                tick++;
+                total += count;
+                var _0x1d38x11 = document[_0xfd94[39]](count * fps + _0xfd94[38]);
+                current[_0xfd94[13]](_0x1d38x11);
+                current[_0xfd94[40]] = current[_0xfd94[41]];
+                var _0x1d38x12 = canvas[_0xfd94[35]] / 2 - 200;
+                ctx[_0xfd94[42]] = _0xfd94[31];
+                ctx[_0xfd94[43]](_0x1d38x12, 190, 400, 60);
+                var _0x1d38x13 = _0xfd94[44];
+                var _0x1d38x14 = Math[_0xfd94[45]](fps * total / tick);
+                var _0x1d38x15 = _0xfd94[46];
+                ctx[_0xfd94[47]] = _0xfd94[33];
+                ctx[_0xfd94[48]] = _0xfd94[49];
+                ctx[_0xfd94[42]] = _0xfd94[29];
+                ctx[_0xfd94[50]](_0x1d38x13, _0x1d38x12, 240);
+                var _0x1d38x16 = ctx[_0xfd94[51]](_0x1d38x13);
+                ctx[_0xfd94[48]] = _0xfd94[52];
+                ctx[_0xfd94[42]] = _0xfd94[37];
+                var _0x1d38x17 = ctx[_0xfd94[51]](_0x1d38x14);
+                ctx[_0xfd94[50]](_0x1d38x14, _0x1d38x12 + _0x1d38x16[_0xfd94[35]], 240);
+                ctx[_0xfd94[48]] = _0xfd94[49];
+                ctx[_0xfd94[42]] = _0xfd94[29];
+                ctx[_0xfd94[50]](_0xfd94[53], _0x1d38x12 + _0x1d38x16[_0xfd94[35]] + _0x1d38x17[_0xfd94[35]], 240);
+                count = 0;
+                if (tick > 3 * fps) {
+                    tick = 0;
+                    total = 0
+                }
+            }
+            function degToRad(_0x1d38x19) {
+                var _0x1d38x1a = Math[_0xfd94[54]] / 180 * _0x1d38x19;
+                return _0x1d38x1a
+            }
+            function eventWindowLoaded() {
+                canvasDraw()
+            }
+            var x = 50;
+            var y = 50;
+            function canvasDraw() {
+                if (x > canvas[_0xfd94[55]] + 20) {
+                    x = 0
+                }
+                ;if (y > canvas[_0xfd94[56]] + 20) {
+                    y = 0
+                }
+                ;if (x < -20) {
+                    x = canvas[_0xfd94[55]]
+                }
+                ;if (y < -20) {
+                    y = canvas[_0xfd94[56]]
+                }
+                ;ctx[_0xfd94[42]] = _0xfd94[29];
+                ctx[_0xfd94[47]] = _0xfd94[57];
+                ctx[_0xfd94[48]] = _0xfd94[52];
+                ctx[_0xfd94[50]](_0xfd94[58], canvas[_0xfd94[35]] / 2, 100);
+                ctx[_0xfd94[48]] = _0xfd94[49];
+                ctx[_0xfd94[50]](_0xfd94[59], canvas[_0xfd94[35]] / 2, 160)
+            }
+            function lockChangeAlert() {
+                count = 0;
+                tick = 0;
+                total = 0;
+                if (document[_0xfd94[60]] === canvas || document[_0xfd94[61]] === canvas) {
+                    document[_0xfd94[63]](_0xfd94[62], canvasLoopMm, false);
+                    if (tmr) {
+                        clearInterval(tmr)
+                    }
+                    ;tmr = setInterval(updateCount, 1000 / fps)
+                } else {
+                    document[_0xfd94[64]](_0xfd94[62], canvasLoopMm, false);
+                    clearInterval(tmr);
+                    tmr = null
+                }
+            }
+            function canvasLoop(_0x1d38x21) {
+                var _0x1d38x22 = _0x1d38x21[_0xfd94[65]] || _0x1d38x21[_0xfd94[66]] || 0;
+                var _0x1d38x23 = _0x1d38x21[_0xfd94[67]] || _0x1d38x21[_0xfd94[68]] || 0;
+                x += _0x1d38x22;
+                y += _0x1d38x23
+            }
+            function canvasLoopMm(_0x1d38x25) {
+                var _0x1d38x26 = _0xfd94[69]in _0x1d38x25 ? _0x1d38x25[_0xfd94[69]]() : [_0x1d38x25];
+                for (e in _0x1d38x26) {
+                    canvasLoop(e);
+                    count++
+                }
+            }
+            function divLoopMm(_0x1d38x21) {
+                count++
+            }
+            var w = window[_0xfd94[70]] || document[_0xfd94[71]][_0xfd94[55]] || document[_0xfd94[7]][_0xfd94[55]];
+            var h = window[_0xfd94[72]] || document[_0xfd94[71]][_0xfd94[56]] || document[_0xfd94[7]][_0xfd94[56]];
+            if (!isDesktop) {
+                console[_0xfd94[74]](_0xfd94[73]);
+                var h1 = document[_0xfd94[10]](_0xfd94[75]);
+                h1[_0xfd94[76]] = _0xfd94[58];
+                divCanvas[_0xfd94[13]](h1);
+                average[_0xfd94[76]] = _0xfd94[77]
+            } else {
+                if (isSafari || isIE) {
+                    divCanvas[_0xfd94[80]](_0xfd94[20], _0xfd94[78] + w + _0xfd94[79]);
+                    divCanvas[_0xfd94[80]](_0xfd94[20], _0xfd94[81] + h + _0xfd94[79]);
+                    var h1 = document[_0xfd94[10]](_0xfd94[75]);
+                    h1[_0xfd94[76]] = _0xfd94[58];
+                    divCanvas[_0xfd94[13]](h1);
+                    average[_0xfd94[76]] = _0xfd94[82]
+                } else {
+                    body[_0xfd94[13]](current);
+                    window[_0xfd94[63]](_0xfd94[83], eventWindowLoaded, false);
+                    canvas = document[_0xfd94[10]](_0xfd94[84]);
+                    divCanvas[_0xfd94[13]](canvas);
+                    ctx = canvas[_0xfd94[86]](_0xfd94[85]);
+                    canvas[_0xfd94[80]](_0xfd94[35], w);
+                    canvas[_0xfd94[80]](_0xfd94[87], h);
+                    window[_0xfd94[88]] = function() {
+                        count = 0;
+                        tick = 0;
+                        total = 0;
+                        if (tmr) {
+                            clearInterval(tmr);
+                            document[_0xfd94[64]](_0xfd94[89], canvasLoopMm);
+                            tmr = null
+                        } else {
+                            document[_0xfd94[63]](_0xfd94[89], canvasLoopMm);
+                            if (tmr) {
+                                clearInterval(tmr)
+                            }
+                            ;tmr = setInterval(updateCount, 1000 / fps)
+                        }
+                    }
+                }
+            }
+        </script>
+    </body>
+</html>
