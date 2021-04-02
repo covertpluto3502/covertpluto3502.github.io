@@ -9,7 +9,12 @@
     color:rgb(255, 102, 0);
       background-color:rgb(0, 0, 255);
 </style>
-<audio src="bg.mp3" autoplay="autoplay" loop="loop"></audio>
+<script>
+  window.onload = function() {
+    document.getElementById("my_audio").play();
+}
+</script>
+<audio id="my_audio" src="bg.mp3" loop="loop"></audio>
 <a href="minesweeper.html"><button>-->MINESWEEPER<--</button></a>
 <br>
 <br>
